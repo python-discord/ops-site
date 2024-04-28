@@ -17,6 +17,11 @@ const GlobalStyle = createGlobalStyle`
     margin-right: 5vw;
     color: #fff;
   }
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
 `;
 
 const CenterImage = styled.img`
@@ -72,6 +77,7 @@ export const generateHeader = (title: string, description: string) => {
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet"></link>
     <meta name="description" content={description} />
+    <meta name="og:description" content={description} />
     <meta name="og:title" content={title} />
     <meta name="og:image" content={logoPng} />
     <meta name="theme-color" content="#a0cef3" />
