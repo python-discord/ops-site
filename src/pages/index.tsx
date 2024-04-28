@@ -15,4 +15,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = generateHeader("PyDis Ops", "Internal services for Python Discord.");
+export const Head: HeadFC = generateHeader("Home", "Internal services for Python Discord.");
