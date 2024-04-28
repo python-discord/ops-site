@@ -1,5 +1,5 @@
 import * as React from "react"
-import type { HeadFC, PageProps } from "gatsby"
+import { Link, type HeadFC, type PageProps } from "gatsby"
 
 import logo from "../images/logo.svg";
 import PageLayout, { generateHeader } from "../layout/page";
@@ -16,14 +16,8 @@ const CenterImage = styled.img`
 
 const NotFound: React.FC<PageProps> = () => {
   return (
-    <PageLayout>
-      <main>
-        <CenterImage src={logo} alt="DevOps Logo" />
-        <div>
-          <h1>404: Not Found</h1>
-          <p>The page you are looking for does not exist.</p>
-        </div>
-      </main>
+    <PageLayout header="404: Not Found" subheader="The page you requested could not be found">
+      <p>Try going back to the <Link to="/">home page</Link>.</p>
     </PageLayout>
   )
 }
