@@ -1,3 +1,5 @@
+![devops logo](./src/images/logo.png)
+
 # ops-site
 
 This is the source code for our internal service directory. It is a simple web application that lists services available to DevOps and staff team members.
