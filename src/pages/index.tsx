@@ -59,7 +59,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
         <ServicesHolder>
           {data.services.nodes.sort().filter(
             service => selectedTag ? service.tags.includes(selectedTag) : true
-          ).sort()
+          ).sort((a, b) => a.name.localeCompare(b.name))
             .map((service, index) => (
               <Service key={index} {...service} />
             ))}
