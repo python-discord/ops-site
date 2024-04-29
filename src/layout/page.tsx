@@ -72,6 +72,7 @@ export default PageLayout;
 
 export const generateHeader = (title: string, description: string) => {
   return () => <>
+    <html lang="en" />
     <title>{title} &bull; PyDis Ops</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
