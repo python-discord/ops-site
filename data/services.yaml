@@ -1,54 +1,65 @@
-- name: AlertManager
+- slug: alertmanager
+  name: AlertManager
   url: https://alertmanager.pythondiscord.com/
-  description: Web panel for AlertManager, showing firing alerts, cluster status, and allowing for silence creation.
+  description: Showing firing alerts and allowing for silence creation.
   tags: [monitoring]
 
-- name: Grafana
+- slug: grafana
+  name: Grafana
   url: https://grafana.pythondiscord.com/
-  description: Web panel for Grafana, showing various metrics and dashboards for the Python Discord infrastructure.
+  description: Graph metrics from datasources.
   tags: [monitoring, dashboards, metrics]
 
-- name: Prometheus
+- slug: prometheus
+  name: Prometheus
   url: https://prometheus.pythondiscord.com/
-  description: Web panel for Prometheus, showing various metrics and alerts for the Python Discord infrastructure.
+  description: Collector of time-series metrics from our infrastructure.
   tags: [monitoring, metrics]
 
-- name: Bitwarden
+- slug: bitwarden
+  name: Bitwarden
   url: https://bitwarden.pythondiscord.com/
-  description: Bitwarden is a storage solution for passwords and other sensitive information used by Python Discord.
+  description: Storage of passwords and sensitive information.
   tags: [passwords, security]
 
-- name: Metabase
+- slug: metabase
+  name: Metabase
   url: https://metabase.pythondiscord.com/
-  description: Metabase is a business intelligence tool used by Python Discord to create dashboards and visualizations.
+  description: Graphing of data from production business metrics.
   tags: [dashboards, metrics]
 
-- name: ModMail
+- slug: modmail
+  name: ModMail
   url: https://modmail.pythondiscord.com/
-  description: ModMail is a tool used by Python Discord moderators to handle user reports and inquiries.
+  description: ModMail web logs viewer.
   tags: [moderation]
 
-- name: Pixels (ModSite)
+- slug: pixels-modsite
+  name: Pixels (ModSite)
   url: https://pixels-modsite.pythondiscord.com/
   description: Moderation and anti-spam frontend for the Pixels event.
   tags: [moderation, events]
 
-- name: Cloudflare
+- slug: cloudflare
+  name: Cloudflare
   url: https://dash.cloudflare.com/
-  description: Cloudflare is a content delivery network (CDN) and DDoS protection service used by Python Discord.
+  description: CDN, DDoS and Edge worker dashboard.
   tags: [infrastructure, security]
 
-- name: Sentry
+- slug: sentry
+  name: Sentry
   url: https://python-discord.sentry.io/
-  description: Sentry is an error tracking tool used by Python Discord to monitor and fix errors in our projects.
+  description: Error tracking and monitoring of deployed applications.
   tags: [errors, monitoring]
 
-- name: Netcup
+- slug: netcup
+  name: Netcup
   url: https://customercontrolpanel.de/
-  description: Netcup is a hosting provider used by Python Discord to host various services.
+  description: Hosting provider for server compute.
   tags: [infrastructure]
 
-- name: Linode
+- slug: linode
+  name: Linode
   url: https://cloud.linode.com/
-  description: Linode is a hosting provider used by Python Discord to host various services.
+  description: Hosting provider for Kubernetes cluster.
   tags: [infrastructure]
