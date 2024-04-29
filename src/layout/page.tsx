@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
     margin-left: 5vw;
     margin-right: 5vw;
     color: #fff;
+    margin-bottom: 50px;
   }
 
   a {
