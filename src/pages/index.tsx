@@ -51,7 +51,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
     <PageLayout header="Available Services" subheader="Below are all the internal services for Python Discord">
       <main>
         <div>
-          <LargerTag tabIndex={0} onClick={() => setSelectedTag(null)} className={selectedTag == null ? "active" : ""}>All</LargerTag>
+          <LargerTag onClick={() => setSelectedTag(null)} className={selectedTag == null ? "active" : ""}>All</LargerTag>
           {data.services.tags.map((tag, index) => (
             <LargerTag onClick={() => setSelectedTag(tag)} className={tag == selectedTag ? "active" : ""} key={index}>{capitalize(tag)}</LargerTag>
           ))}
