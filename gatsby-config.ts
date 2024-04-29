@@ -28,7 +28,14 @@ const config: GatsbyConfig = {
         "path": "./src/pages/"
       },
       __key: "pages"
-    }]
+    },
+    `gatsby-transformer-yaml`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `./data/`,
+      },
+    },]
 };
 
 export default config;
