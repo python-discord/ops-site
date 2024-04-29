@@ -15,7 +15,7 @@ export const onInitialClientRender = (
 
     mousetrap.bind(sequence, () => {
         let iframe = document.createElement("iframe");
-        iframe.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&controls=0";
+        iframe.src = "https://www.youtube.com/embed/o-YBDTqX_ZU?autoplay=1&controls=0";
         iframe.style.position = "fixed";
         iframe.style.top = "0";
         iframe.style.left = "0";
