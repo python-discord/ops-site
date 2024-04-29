@@ -35,7 +35,18 @@ const config: GatsbyConfig = {
       options: {
         path: `./data/`,
       },
-    },]
+    },],
+  headers: [
+    {
+      source: "/*",
+      headers: [
+        {
+          key: "Referrer-Policy",
+          value: "strict-origin-when-cross-origin",
+        }
+      ]
+    }
+  ]
 };
 
 export default config;
