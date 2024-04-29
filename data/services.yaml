@@ -32,3 +32,23 @@
   url: https://pixels-modsite.pythondiscord.com/
   description: Moderation and anti-spam frontend for the Pixels event.
   tags: [moderation, events]
+
+- name: Cloudflare
+  url: https://dash.cloudflare.com/
+  description: Cloudflare is a content delivery network (CDN) and DDoS protection service used by Python Discord.
+  tags: [infrastructure, security]
+
+- name: Sentry
+  url: https://python-discord.sentry.io/
+  description: Sentry is an error tracking tool used by Python Discord to monitor and fix errors in our projects.
+  tags: [errors, monitoring]
+
+- name: Netcup
+  url: https://customercontrolpanel.de/
+  description: Netcup is a hosting provider used by Python Discord to host various services.
+  tags: [infrastructure]
+
+- name: Linode
+  url: https://cloud.linode.com/
+  description: Linode is a hosting provider used by Python Discord to host various services.
+  tags: [infrastructure]
