@@ -37,10 +37,15 @@ const CenterImage = styled.img`
 const Header = styled.h1`
   font-size: 3em;
   margin: 0;
+
+  @media (max-width: 600px) {
+    font-size: 2em;
+  }
 `
 
 const SubHeader = styled.h2`
 margin: 0;
+line-height: 1em;
 `
 
 const HeaderDiv = styled.div`
