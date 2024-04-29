@@ -1,0 +1,34 @@
+- name: AlertManager
+  url: https://alertmanager.pythondiscord.com/
+  description: Web panel for AlertManager, showing firing alerts, cluster status, and allowing for silence creation.
+  tags: [monitoring]
+
+- name: Grafana
+  url: https://grafana.pythondiscord.com/
+  description: Web panel for Grafana, showing various metrics and dashboards for the Python Discord infrastructure.
+  tags: [monitoring, dashboards, metrics]
+
+- name: Prometheus
+  url: https://prometheus.pythondiscord.com/
+  description: Web panel for Prometheus, showing various metrics and alerts for the Python Discord infrastructure.
+  tags: [monitoring, metrics]
+
+- name: Bitwarden
+  url: https://bitwarden.pythondiscord.com/
+  description: Bitwarden is a storage solution for passwords and other sensitive information used by Python Discord.
+  tags: [passwords, security]
+
+- name: Metabase
+  url: https://metabase.pythondiscord.com/
+  description: Metabase is a business intelligence tool used by Python Discord to create dashboards and visualizations.
+  tags: [dashboards, metrics]
+
+- name: ModMail
+  url: https://modmail.pythondiscord.com/
+  description: ModMail is a tool used by Python Discord moderators to handle user reports and inquiries.
+  tags: [moderation]
+
+- name: Pixels (ModSite)
+  url: https://pixels-modsite.pythondiscord.com/
+  description: Moderation and anti-spam frontend for the Pixels event.
+  tags: [moderation, events]
