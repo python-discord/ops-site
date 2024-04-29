@@ -53,7 +53,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
         <div>
           <LargerTag tabIndex={0} onClick={() => setSelectedTag(null)} className={selectedTag == null ? "active" : ""}>All</LargerTag>
           {data.services.tags.map((tag, index) => (
-            <LargerTag tabIndex={0} onClick={() => setSelectedTag(tag)} className={tag == selectedTag ? "active" : ""} key={index}>{capitalize(tag)}</LargerTag>
+            <LargerTag onClick={() => setSelectedTag(tag)} className={tag == selectedTag ? "active" : ""} key={index}>{capitalize(tag)}</LargerTag>
           ))}
         </div>
         <ServicesHolder>
