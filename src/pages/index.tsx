@@ -3,7 +3,7 @@ import { graphql, type HeadFC, type PageProps } from "gatsby"
 
 import PageLayout, { generateHeader } from "../layout/page";
 
-import Service, { ServiceProps, Tag } from "../components/service";
+import Service, { ServiceProps } from "../components/service";
 import styled from "styled-components";
 import { capitalize } from "../utils";
 
@@ -33,7 +33,14 @@ const ServicesHolder = styled.div`
   margin-top: 20px;
 `;
 
-const LargerTag = styled(Tag)`
+const LargerTag = styled.span`
+  color: #000;
+  font-weight: 600;
+  font-family: monospace;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  display: inline-block;
   font-size: 1.2em;
   transition: filter 0.2s, transform 0.2s;
   cursor: pointer;

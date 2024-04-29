@@ -11,6 +11,13 @@ export type ServiceProps = {
     image: string;
 }
 
+const DimmedURL = styled.p`
+    color: #666;
+    font-size: 0.8em;
+    margin-top: 10px;
+    font-family: monospace;
+`;
+
 const ServiceCard = styled.a`
     background-color: #fff;
     border-radius: 10px;
@@ -27,17 +34,6 @@ const ServiceCard = styled.a`
     }
 `;
 
-export const Tag = styled.span`
-    background-color: rgba(110, 119, 255, 0.39);
-    color: #000;
-    font-weight: 600;
-    font-family: monospace;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 5px;
-    display: inline-block;
-`;
-
 const ServiceImage = styled.img`
     border-radius: 10px;
     width: 80px;
@@ -52,19 +48,13 @@ const ServiceDescription = styled.p`
 `;
 
 
-const Service: React.FC<ServiceProps> = ({ name, description, url, tags, image }) => {
+const Service: React.FC<ServiceProps> = ({ name, description, url, image }) => {
     return (
         <ServiceCard href={url}>
             <ServiceImage src={image} alt={name} />
             <ServiceHeader>{name}</ServiceHeader>
             <ServiceDescription>{description}</ServiceDescription>
-            <div>
-                {
-                    tags.map((tag, index) => (
-                        <Tag key={index}>{capitalize(tag)}</Tag>
-                    ))
-                }
-            </div>
+            <DimmedURL>{url}</DimmedURL>
         </ServiceCard>
     );
 }
