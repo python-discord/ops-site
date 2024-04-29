@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
 const CenterImage = styled.img`
   display: block;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 10px;
   width: 70%;
   height: auto;
   max-width: 600px;

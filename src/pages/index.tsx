@@ -12,14 +12,24 @@ type IndexPageProps = {
     services: {
       nodes: ServiceProps[],
       tags: string[]
+    },
+    images: {
+      nodes: {
+        name: string,
+        childImageSharp: {
+          resize: {
+            src: string
+          }
+        }
+      }[]
     }
   }
 }
 
 const ServicesHolder = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
   margin-top: 20px;
 `;
 
@@ -50,6 +60,15 @@ const LargerTag = styled(Tag)`
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
   const [selectedTag, setSelectedTag] = React.useState<string | null>(null);
 
+
+  const serviceImageMap: Record<string, string> = {};
+
+  data.images.nodes.forEach((node) => {
+    serviceImageMap[node.name] = node.childImageSharp.resize.src;
+  });
+
+  console.log(data.services)
+
   return (
     <PageLayout header="Available Services" subheader="Below are all the internal services for Python Discord">
       <main>
@@ -64,7 +83,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
             service => selectedTag ? service.tags.includes(selectedTag) : true
           ).sort((a, b) => a.name.localeCompare(b.name))
             .map((service, index) => (
-              <Service key={index} {...service} />
+              <Service key={index} {...service} image={serviceImageMap[service.slug] ? serviceImageMap[service.slug] : serviceImageMap["unknown"]} />
             ))}
         </ServicesHolder>
 
@@ -81,6 +100,7 @@ export const query = graphql`
   query {
     services: allServicesYaml {
       nodes {
+        slug
         name
         description
         url
@@ -88,6 +108,17 @@ export const query = graphql`
       }
 
       tags: distinct(field: {tags: SELECT})
+    }
+      
+    images: allFile(filter: {sourceInstanceName: {eq: "service_images"}}) {
+      nodes {
+        name
+        childImageSharp {
+          resize(height: 80, quality: 100) {
+            src
+          }
+        }
+      }
     }
   }
 `

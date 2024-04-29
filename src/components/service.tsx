@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { capitalize } from '../utils';
 
 export type ServiceProps = {
+    slug: string;
     name: string;
     description: string;
     url: string;
     tags: string[];
+    image: string;
 }
 
 const ServiceCard = styled.a`
@@ -25,12 +27,6 @@ const ServiceCard = styled.a`
     }
 `;
 
-const DimmedURL = styled.span`
-    color: #999;
-    font-size: 0.9em;
-    font-family: monospace;
-`;
-
 export const Tag = styled.span`
     background-color: rgba(110, 119, 255, 0.39);
     color: #000;
@@ -42,11 +38,26 @@ export const Tag = styled.span`
     display: inline-block;
 `;
 
-const Service: React.FC<ServiceProps> = ({ name, description, url, tags }) => {
+const ServiceImage = styled.img`
+    border-radius: 10px;
+    width: 80px;
+`;
+
+const ServiceHeader = styled.h3`
+    margin: 0;
+`;
+
+const ServiceDescription = styled.p`
+    margin: 0;
+`;
+
+
+const Service: React.FC<ServiceProps> = ({ name, description, url, tags, image }) => {
     return (
         <ServiceCard href={url}>
-            <h3>{name}</h3>
-            <p>{description}</p>
+            <ServiceImage src={image} alt={name} />
+            <ServiceHeader>{name}</ServiceHeader>
+            <ServiceDescription>{description}</ServiceDescription>
             <div>
                 {
                     tags.map((tag, index) => (
@@ -54,7 +65,6 @@ const Service: React.FC<ServiceProps> = ({ name, description, url, tags }) => {
                     ))
                 }
             </div>
-            <DimmedURL>{url}</DimmedURL>
         </ServiceCard>
     );
 }
