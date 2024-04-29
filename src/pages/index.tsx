@@ -27,6 +27,8 @@ const LargerTag = styled(Tag)`
   font-size: 1.2em;
   transition: filter 0.2s, transform 0.2s;
   cursor: pointer;
+  background-color: rgb(195, 195, 245);
+  border: 2px solid black;
 
   @media (max-width: 600px) {
     font-size: 1em;
@@ -41,6 +43,7 @@ const LargerTag = styled(Tag)`
   &.active {
     background-color: #333;
     color: #fff;
+    border: 2px solid #fff;
   }
 `
 

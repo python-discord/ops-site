@@ -32,7 +32,7 @@ const DimmedURL = styled.span`
 `;
 
 export const Tag = styled.span`
-    background-color: #c4c4c4;
+    background-color: rgba(110, 119, 255, 0.39);
     color: #000;
     font-weight: 600;
     font-family: monospace;
