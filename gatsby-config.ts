@@ -24,6 +24,14 @@ const config: GatsbyConfig = {
     }, {
       resolve: 'gatsby-source-filesystem',
       options: {
+        "name": "service_images",
+        "path": "./service_images/"
+      },
+      __key: "service_images"
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         "name": "pages",
         "path": "./src/pages/"
       },
