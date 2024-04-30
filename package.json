@@ -20,6 +20,7 @@
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.13.4",
     "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-json-output": "^1.2.0",
     "gatsby-plugin-manifest": "^5.13.1",
     "gatsby-plugin-mdx": "^5.13.1",
     "gatsby-plugin-sharp": "^5.13.1",
