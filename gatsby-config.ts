@@ -67,7 +67,7 @@ const config: GatsbyConfig = {
               nodes {
                 name
                 childImageSharp {
-                  resize(height: 256, quality: 100) {
+                  resize(height: 256, quality: 100, toFormat: PNG) {
                     src
                   }
                 }
