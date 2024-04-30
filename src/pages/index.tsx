@@ -121,7 +121,7 @@ export const query = graphql`
       nodes {
         name
         childImageSharp {
-          resize(height: 80, quality: 100) {
+          resize(height: 80, quality: 100, toFormat: WEBP) {
             src
           }
         }
