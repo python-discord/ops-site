@@ -1,9 +1,11 @@
 import type { GatsbyConfig } from "gatsby";
 
+const siteURL = "https://ops.pydis.wtf";
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `PyDis Ops`,
-    siteUrl: `https://ops.pydis.wtf`
+    siteUrl: siteURL,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -43,7 +45,53 @@ const config: GatsbyConfig = {
       options: {
         path: `./data/`,
       },
-    },],
+    }, {
+      resolve: `gatsby-plugin-json-output`,
+      options: {
+        siteUrl: siteURL,
+        graphQLQuery: `
+          {
+            services: allServicesYaml {
+              nodes {
+                slug
+                name
+                description
+                url
+                tags
+              }
+        
+              tags: distinct(field: {tags: SELECT})
+            }
+              
+            images: allFile(filter: {sourceInstanceName: {eq: "service_images"}}) {
+              nodes {
+                name
+                childImageSharp {
+                  resize(height: 256, quality: 100) {
+                    src
+                  }
+                }
+              }
+            }
+          }
+        `,
+        serializeFeed: ({ data }: { data: any }) => {
+          const serviceImageMap: { [key: string]: string } = {};
+          data.images.nodes.forEach((node: any) => {
+            serviceImageMap[node.name] = node.childImageSharp.resize.src;
+          });
+
+          const services = data.services.nodes.map((service: any) => ({
+            ...service,
+            image: serviceImageMap[service.slug] ? serviceImageMap[service.slug] : serviceImageMap["unknown"],
+          }));
+
+          return services;
+        },
+        feedFilename: "services",
+        nodesPerFeedFile: 100,
+      }
+    }],
   headers: [
     {
       source: "/*",
