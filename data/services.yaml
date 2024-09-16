@@ -34,6 +34,12 @@
   description: ModMail web logs viewer.
   tags: [moderation]
 
+- slug: munin
+  name: Munin
+  url: https://munin.pydis.wtf/
+  description: Monitoring that will outlive our team.
+  tags: [dashboard, monitoring, metrics]
+
 - slug: pixels-modsite
   name: Pixels (ModSite)
   url: https://pixels-mod.pydis.wtf/
